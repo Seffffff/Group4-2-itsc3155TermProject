@@ -1,0 +1,18 @@
+<h1>Listing players</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Grade</th>
+    <th>Teacher</th>
+  </tr>
+ 
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= player.name %></td>
+      <td><%= player.grade %></td>
+      <td><%= player.teacher %></td>
+      <td><%= link_to 'Show', player_path(player) %></td>
+    </tr>
+  <% end %>
+</table>
