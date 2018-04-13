@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402172400) do
+ActiveRecord::Schema.define(version: 20180413155551) do
 
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.string "teacher"
     t.string "grade"
+    t.integer "roster_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["roster_id"], name: "index_players_on_roster_id"
+  end
+
+  create_table "rosters", force: :cascade do |t|
+    t.string "rosterName"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

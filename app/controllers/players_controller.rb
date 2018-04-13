@@ -12,13 +12,9 @@ class PlayersController < ApplicationController
     end
     
     def create
-        @player = Player.new(player_params)
-        
-        if @player.save
-            redirect_to @player
-        else
-            render 'new'
-        end
+        @roster = Roster.find(params[:roster_id])
+        @player = @roster.players.create(player_params)
+        redirect_to roster_path(@roster)
     end
     
     def edit
