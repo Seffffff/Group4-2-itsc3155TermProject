@@ -1,5 +1,6 @@
 class CreatePlayers < ActiveRecord::Migration[5.1]
   def change
+    drop_table :players
     create_table :players do |t|
       t.string :name
       t.string :teacher
