@@ -4,11 +4,12 @@
 
 <table>
     <tr>
+        <br><br>
         <th>Roster Name</th>
     </tr>
     
       <% @rosters.each do |roster| %>
-        <tr>
+        <tr id = contents>
             <td><%= roster.rosterName %></td>
             <td><%= link_to 'Show', roster_path(roster) %></td>
             <td><%= link_to 'Edit', edit_roster_path(roster) %></td>
