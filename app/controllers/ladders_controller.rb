@@ -22,8 +22,8 @@ class LaddersController < ApplicationController
     end
     def update
        @ladder = Ladder.find(params[:id]) 
-        if @ladder.update(roster_params)
-           redirect_to @ladder
+        if @ladder.update(ladder_params)
+           redirect_to ladders_path
         else 
             render 'edit'
         end
@@ -32,7 +32,7 @@ class LaddersController < ApplicationController
         @ladder = Ladder.find(params[:id])
         @ladder.destroy
         
-        redirect_to ladderss_path
+        redirect_to ladders_path
     end
 private 
     def ladder_params

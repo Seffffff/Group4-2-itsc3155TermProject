@@ -1,4 +1,4 @@
-<h1>Listing rosters</h1>
+<h1>Listing Ladders</h1>
 <%=link_to'New Ladder',new_ladder_path%>
 
 
@@ -15,4 +15,5 @@
             <td><%= link_to 'Destroy', ladder_path(ladder),method: :delete,data: { confirm: 'Are you sure?' } %></td>
         </tr>
     <% end %>
-</table>        
+</table>
+<%=link_to'View Rosters', rosters_path%>
