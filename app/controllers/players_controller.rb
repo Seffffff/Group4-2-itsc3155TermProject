@@ -16,29 +16,45 @@ class PlayersController < ApplicationController
         @player = @roster.players.create(player_params)
         redirect_to roster_path(@roster)
     end
-    
+    def edit2 
+        @roster = Roster.find(params[:roster_id])
+        @player = @roster.players.find(params[:player_id])
+    end
     def edit
-        @player = Player.find(params[:id])
+        @roster = Roster.find(params[:roster_id])
+        @player = @roster.players.find(params[:id])
     end
     
     def update
-        @player = Player.find(params[:id])
+         @roster = Roster.find(params[:roster_id])
+        @player = @roster.players.find(params[:id])
         if @player.update(player_params)
-            redirect_to @player
+        redirect_to @roster
+        else
+            render 'edit'
+        end
+    end
+    def update2
+        @ladder = Ladder.find_by_id(1)
+         @roster = Roster.find(params[:roster_id])
+        @player = @roster.players.find(params[:player_id])
+        if @player.update(player_params)
+        redirect_to @ladder
         else
             render 'edit'
         end
     end
     
     def destroy
-        @player = Player.find(params[:id])
+        @roster = Roster.find(params[:roster_id])
+        @player = @roster.players.find(params[:id])
         @player.destroy
-        redirect_to players_path
+        redirect_to roster_path(@roster)
     end
 end
 
 private
     def player_params
-        params.require(:player).permit(:name, :teacher, :grade)
+        params.require(:player).permit(:name, :teacher, :grade, :rank, :wins, :losses)
     end
     

@@ -1,0 +1,18 @@
+<h1>Listing rosters</h1>
+<%=link_to'New Ladder',new_ladder_path%>
+
+
+<table>
+    <tr>
+        <th>Ladder Name</th>
+    </tr>
+    
+      <% @ladders.each do |ladder| %>
+        <tr>
+            <td><%= ladder.name %></td>
+            <td><%= link_to 'Show', ladder_path(ladder) %></td>
+            <td><%= link_to 'Edit', edit_ladder_path(ladder) %></td>
+            <td><%= link_to 'Destroy', ladder_path(ladder),method: :delete,data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+</table>        

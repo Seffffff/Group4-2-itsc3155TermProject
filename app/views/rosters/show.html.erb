@@ -3,24 +3,17 @@
     <%= @roster.rosterName %>
 </p>
 
-<h2>Players</h2>
 <table>
   <tr>
     <th>Name</th>
     <th>Teacher</th>
     <th>Grade</th>
   </tr>
-  
-  <% @roster.players.each do |player| %>
-    <tr>
-      <td><%= player.name %></td>
-      <td><%= player.teacher %></td>
-      <td><%= player.grade %></td>
-    </tr>
-  <% end %>
+<%= render @roster.players %>
 </table>
 
 <h2>Add a player:</h2>
+<<<<<<< Updated upstream
 <%= form_for([@roster, @roster.players.build]) do |f| %>
   <p>
     <%= f.label :name %><br>
@@ -40,5 +33,9 @@
   <br>
 <% end %>
 <br>
+=======
+<%= render 'players/form' %>
 
-<%=link_to 'Roster List', rosters_path%>
+>>>>>>> Stashed changes
+
+<%=link_to 'Roster List', rosters_path %>

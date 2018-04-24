@@ -1,0 +1,7 @@
+    <tr>
+      <td><%= player.name %></td>
+      <td><%= player.teacher %></td>
+      <td><%= player.grade %></td>
+      <td><%= link_to 'Edit', edit_roster_player_path(@roster, player) %></td>
+      <td><%= link_to 'Destroy Player', [player.roster, player], method: :delete, data: {confirm: 'Are you sure?' } %></td>
+    </tr>,
