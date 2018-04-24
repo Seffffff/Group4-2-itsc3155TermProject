@@ -1,8 +1,8 @@
+<%= @ladder = Ladder.find(params[:id]) %>
 <p>
     <Strong>Ladder Name</Strong>
     <%= @ladder.name %>
 </p>
-
 <table>
   <tr>
     <th>Roster</th>
@@ -23,12 +23,11 @@
       <td><%= player.rank %></td>
       <td><%= player.wins %></td>
       <td><%= player.losses %></td>
-      <td><%= link_to 'Edit', roster_player_edit2_path(roster, player) %></td>
+      <td><%= link_to 'Edit', roster_player_edit2_path(roster, player, @ladder) %></td>
     </tr>
     <% end %>
     <% end %>
 </table>
-
 
 
 

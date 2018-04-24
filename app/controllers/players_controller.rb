@@ -19,6 +19,7 @@ class PlayersController < ApplicationController
     def edit2 
         @roster = Roster.find(params[:roster_id])
         @player = @roster.players.find(params[:player_id])
+        @ladder = Ladder.find(params[:ladder_id])
     end
     def edit
         @roster = Roster.find(params[:roster_id])
@@ -35,7 +36,7 @@ class PlayersController < ApplicationController
         end
     end
     def update2
-        @ladder = Ladder.find_by_id(1)
+        @ladder = Ladder.find(params[:id])
          @roster = Roster.find(params[:roster_id])
         @player = @roster.players.find(params[:player_id])
         if @player.update(player_params)
