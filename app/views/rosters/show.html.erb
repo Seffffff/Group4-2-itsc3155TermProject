@@ -3,42 +3,17 @@
     <%= @roster.rosterName %>
 </p>
 
-<h2>Players</h2>
 <table>
   <tr>
     <th>Name</th>
     <th>Teacher</th>
     <th>Grade</th>
   </tr>
-  
-  <% @roster.players.each do |player| %>
-    <tr>
-      <td><%= player.name %></td>
-      <td><%= player.teacher %></td>
-      <td><%= player.grade %></td>
-    </tr>
-  <% end %>
+<%= render @roster.players %>
 </table>
 
 <h2>Add a player:</h2>
-<%= form_for([@roster, @roster.players.build]) do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :teacher %><br>
-    <%= f.text_field :teacher %>
-  </p><p>
-    <%= f.label :grade %><br>
-    <%= f.text_field :grade %>
-  </p>
-  <p>
-    <%= f.submit %>
-    <br>
-  </p>
-  <br>
-<% end %>
-<br>
+<%= render 'players/form' %>
 
-<%=link_to 'Roster List', rosters_path%>
+<br><br><br>
+<%=link_to 'Roster List', rosters_path %>&nbsp;<%=link_to 'Ladders', ladders_path %>

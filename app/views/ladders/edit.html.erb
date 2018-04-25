@@ -1,0 +1,30 @@
+<h1>Editing roster</h1>
+
+<%= form_for :ladder, url: ladder_path(@ladder), method: :patch do |f| %>
+  <% if @ladder.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+              <%= pluralize(@ladder.errors.count, "error") %> prohibited
+              this ladder from being saved:
+          </h2>
+          <ul>
+              <% @ladder.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %> 
+          </ul>
+        </div>
+    <% end %>
+
+    <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+    </p>
+    
+    <p>
+        <%= f.submit %>
+        <br>
+    </p>
+    <br>
+<% end %>
+<br>
+<%= link_to 'Back', ladders_path %>

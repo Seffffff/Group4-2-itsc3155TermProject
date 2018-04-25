@@ -1,0 +1,35 @@
+<p>
+    <Strong>Ladder Name</Strong>
+    <%= @ladder.name %>
+</p>
+
+<table>
+  <tr>
+    <th>Roster</th>
+    <th>Name</th>
+    <th>Teacher</th>
+    <th>Grade</th>
+    <th>Rank</th>
+    <th>Wins</th>
+    <th>Losses</th>
+    <%= Roster.all.each do |roster| %>
+    <%= roster.players.each do |player| %>
+  </tr>
+      <tr>
+      <td><%= roster.rosterName %></td>
+      <td><%= player.name %></td>
+      <td><%= player.teacher %></td>
+      <td><%= player.grade %></td>
+      <td><%= player.rank %></td>
+      <td><%= player.wins %></td>
+      <td><%= player.losses %></td>
+      <td><%= link_to 'Edit', roster_player_edit2_path(roster, player) %></td>
+    </tr>
+    <% end %>
+    <% end %>
+</table>
+
+
+
+
+<%=link_to 'Roster List', ladders_path %>

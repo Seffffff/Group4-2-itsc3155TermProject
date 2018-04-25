@@ -1,5 +1,5 @@
 class Roster < ApplicationRecord
-     has_many :players
-     accepts_nested_attributes_for :players, allow_destroy: true
+     has_many :players, dependent: :destroy
+     accepts_nested_attributes_for :players
      validates :rosterName, presence: true
 end

@@ -1,6 +1,6 @@
 <h1>Editing player</h1>
  
-<%= form_for ([@roster, @player]), method: :patch do |f| %>
+<%= form_for ([@roster, @player]), url: roster_player_update2_path(@roster, @player), method: :post do |f| %>
  
   <% if @player.errors.any? %>
     <div id="error_explanation">
@@ -17,18 +17,18 @@
   <% end %>
  
   <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :rank %><br>
+    <%= f.number_field :rank %>
   </p>
  
   <p>
-    <%= f.label :grade %><br>
-    <%= f.text_field :grade %>
+    <%= f.label :wins %><br>
+    <%= f.text_field :wins %>
   </p>
   
   <p>
-    <%= f.label :teacher %><br>
-    <%= f.text_field :teacher %>
+    <%= f.label :losses %><br>
+    <%= f.text_field :losses %>
   </p>
  
   <p>
