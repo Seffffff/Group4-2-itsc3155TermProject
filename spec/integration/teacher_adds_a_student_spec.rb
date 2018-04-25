@@ -10,7 +10,6 @@ feature"Teacher adds a student" do
         fill_in "Teacher", with: "A New Capybara Teacher"
         fill_in "Grade", with: "A New Capybara Grade"
         click_button "Create Player"
-        expect(page).to have_content"Players"
         expect(page).to have_content"A New Capybara Player"
         expect(page).to have_content"A New Capybara Teacher"
         expect(page).to have_content"A New Capybara Grade"
