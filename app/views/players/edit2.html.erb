@@ -1,6 +1,6 @@
 <h1>Editing player</h1>
  
-<%= form_for ([@roster, @player, @ladder]), url: roster_player_update2_path(@roster, @player), method: :post do |f| %>
+<%= form_for ([@roster, @player]), url: roster_player_update2_path(@roster, @player), method: :post do |f| %>
  
   <% if @player.errors.any? %>
     <div id="error_explanation">

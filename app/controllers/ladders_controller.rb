@@ -13,6 +13,7 @@ class LaddersController < ApplicationController
     end
     def show
         @ladder = Ladder.find(params[:id])
+        @rosters = Roster.all
     end
     def index
         @ladders = Ladder.all
