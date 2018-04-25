@@ -9,7 +9,7 @@
     </tr>
     
       <% @rosters.each do |roster| %>
-        <tr id = contents>
+        <tr>
             <td><%= roster.rosterName %></td>
             <td><%= link_to 'Show', roster_path(roster) %></td>
             <td><%= link_to 'Edit', edit_roster_path(roster) %></td>
