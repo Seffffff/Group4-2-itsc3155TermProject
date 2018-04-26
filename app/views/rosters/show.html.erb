@@ -1,7 +1,6 @@
-<p>
-    <Strong>Roster Name</Strong>
-    <%= @roster.rosterName %>
-</p>
+<h1>
+    <%= @roster.rosterName %>'s Roster
+</h1>
 
 <table>
   <tr>
@@ -15,5 +14,6 @@
 <h2>Add a player:</h2>
 <%= render 'players/form' %>
 
-<br><br><br>
-<%=link_to 'Roster List', rosters_path %>&nbsp;<%=link_to 'Ladders', ladders_path %>
+<br><br><br><br>
+<%=link_to 'Roster List', rosters_path %>&nbsp;
+<%=link_to 'Ladders', ladders_path %>
