@@ -23,7 +23,7 @@
       <td><%= player.rank %></td>
       <td><%= player.wins %></td>
       <td><%= player.losses %></td>
-      <td><%= link_to 'Edit', roster_player_edit2_path(roster, player, @ladder) %></td>
+      <td><%= link_to 'Edit', roster_player_edit2_path(roster, player) %></td>
     </tr>
     <% end %>
     <% end %>
@@ -31,5 +31,5 @@
 
 <br> <br>
 
-
-<%=link_to 'Roster List', ladders_path %>
+<%=link_to 'Ladder List', ladders_path %>
+<%=link_to 'Roster List', rosters_path %>

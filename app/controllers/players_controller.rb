@@ -57,5 +57,4 @@ end
 private
     def player_params
         params.require(:player).permit(:name, :teacher, :grade, :rank, :wins, :losses)
-    end
-    
+end
