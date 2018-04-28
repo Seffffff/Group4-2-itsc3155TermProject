@@ -40,7 +40,7 @@ class PlayersController < ApplicationController
          @roster = Roster.find(params[:roster_id])
         @player = @roster.players.find(params[:player_id])
         if @player.update(player_params)
-        redirect_to @ladder
+        redirect_to ladders_path
         else
             render 'edit'
         end
